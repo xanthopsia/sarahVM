@@ -11,7 +11,8 @@ R_PC => program counter
 R_COND => condition flag
 */
 
-enum {
+enum
+{
 	R_R0 = 0,
 	R_R1,
 	R_R2,
@@ -337,7 +338,7 @@ int main(int argc, const char* argv[]) {
                 break;
 
             case TRAP_PUTS: {
-                /* one char per word */
+                // one char per word
                 uint16_t* c = memory + registers[R_R0];
                 while (*c) {
                     putc((char)*c, stdout);
